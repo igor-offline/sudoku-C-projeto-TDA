@@ -7,6 +7,8 @@ Jogo de Sudoku feito em linguagem C, rodando no terminal.
 
 Feito para praticar lógica de programação e manipulação de matrizes
 
+Tabuleiro predefinido, permite jogar e valida as regras.
+
 ## Compilar usando GCC:
 gcc sudoku.c -o sudoku
 
@@ -22,5 +24,6 @@ Insira o número desejado (1 a 9)
 ## Regras do jogo
 Números iguais não podem existir na mesma posição, linha, coluna e/ou bloco 3x3
 
-O jogo termina quando o tabuleiro estiver completo, 
+O jogo termina quando o tabuleiro estiver completo,
+
 Com cada linha e coluna com números de 1 a 9 sem repetição

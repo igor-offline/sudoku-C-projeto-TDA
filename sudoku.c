@@ -246,10 +246,10 @@ void removerNumeros(Tabuleiro *t) {
     pos[j] = temp;
   }
 
-  // remove as escolhidas
+  // remove as escolhidas por posicoes lineares
   for (int i = 0; i < remover; i++) {
-    int linha = pos[i] / TAMANHO;
-    int coluna = pos[i] % TAMANHO;
+    int linha = pos[i] / TAMANHO; //pega linha
+    int coluna = pos[i] % TAMANHO;  //pega coluna
     t->matriz[linha][coluna] = 0;
   }
 
@@ -274,7 +274,7 @@ void imprimirMatriz(Tabuleiro *t) {
     for (int coluna = 0; coluna < TAMANHO; coluna++) {
 
       if (t->matriz[linha][coluna] == 0) {
-        printf("%s %d %s", codigoCor(PRETO), t->matriz[linha][coluna], codigoCor(RESET));
+        printf("   ");
       } else if (t->jogadasPlayer[linha][coluna] == 1) { // se numero for jogado pelo player, imprimir numero amarelo
         printf("%s %d %s", codigoCor(AMARELO), t->matriz[linha][coluna], codigoCor(RESET));
       } else { // numero predefinido, sem cor
@@ -481,7 +481,7 @@ int existeNumeroLinha(Tabuleiro *t, int linha, int numero, int *colunaConflito) 
 }
 
 int existeNumeroColuna(Tabuleiro *t, int coluna, int numero, int *linhaConflito) {
-  for (int l = 0; l < 9; l++) {
+  for (int l = 0; l < TAMANHO; l++) {
     if (t->matriz[l][coluna] == numero) {
       if (linhaConflito != NULL) {
         *linhaConflito = l; // salva conflito pra avisar o player
